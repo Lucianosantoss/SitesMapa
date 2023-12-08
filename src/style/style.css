@@ -1,0 +1,93 @@
+#map { height: 100%;
+  width:100%;
+}  
+
+p{
+margin-top: auto;
+}
+
+body {
+   background: -webkit-linear-gradient(left, #b786ca, #d6e4f4);
+    padding: 0;
+    margin: 0;
+    text-align: justify; 
+    font-style: italic;     /* estilo */
+    color: rgb(80, 78, 78); /* cor do texto */
+       /* alinhamento */
+}
+.principal {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 100px 450px 150px ;
+  grid-template-areas: "cabecalho cabecalho" 
+                       "secao barra-lateral" 
+                       "rodape rodape";
+}
+
+header {
+ grid-area: cabecalho;
+ border: #ffffff solid;
+ text-align: center; 
+}
+
+section {
+  grid-area: secao;
+  border: #ffffff solid;
+}
+
+aside {
+  grid-area: barra-lateral;
+  border: #ffffff solid;
+}
+footer {
+  width: auto;
+  height: 500px;
+  grid-area: rodape;
+  display: flex;
+  justify-content: space-evenly;
+}
+#noticia{
+  width: 100%;
+  border: #ffffff solid;
+}
+
+
+@media(max-width: 992px) {
+
+  .principal {
+      grid-template-columns: 100%;
+      grid-template-areas: "cabecalho" "secao" "barra-lateral" "rodape";
+  }
+
+  footer {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+  }
+  #noticia{
+      margin: 0;
+      width: 49%;
+  }
+
+  #noticia {
+      width: 100%;
+      order: -1;
+  }
+}
+/**/
+@media(max-width: 768px) {
+  body {
+      margin: 0 15px;
+    
+  }
+
+  .principal,#noticia {
+      width: 100%;
+  }
+
+  #noticia {
+      order: initial; 
+  }
+}
